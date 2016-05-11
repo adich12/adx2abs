@@ -21,7 +21,9 @@ begin
       , null -- execution_status_details
       );
       Execute Immediate cr_steps.step_plsql||'(an_run_id=>'||to_char(ln_run_id)||')';
+
       pkg_ref_migration_log.p_upd_step_log(ln_run_id , cr_steps.step_id, 'SUCCESS' -- execution_status
+      
       , null -- execution_status_details
       );
       commit;
